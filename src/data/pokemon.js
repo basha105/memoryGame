@@ -1,5 +1,6 @@
 export const pokemon = [
     "pikachu", "squirtle", "charmander",
-    "chimchar", "meowth", "bulbasaur",
-    "piplup", "munchlax", "wooper"
+    "bulbasaur", "magikarp", "piplup",
+    "munchlax", "treecko", "chimchar",
+    "mudkip", "meowth", "cyndaquil"
 ]
