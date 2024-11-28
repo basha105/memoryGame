@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { pokemon } from '../data/pokemon.js';
+import '../styles/cardStyle.css';
 
 // eslint-disable-next-line react/prop-types
 export default function Card({ index }) {
@@ -20,7 +21,7 @@ export default function Card({ index }) {
     }, []);
 
     return (
-        <div>
+        <div id="card">
             <img src={imageUrl}></img>
         </div>
     )
