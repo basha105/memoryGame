@@ -1,10 +1,10 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
 import './index.css'
-import LoadCards from './components/buildCard.jsx'
+import BuildCards from './components/buildCard';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <LoadCards />
+    <BuildCards/>
   </StrictMode>,
 )
