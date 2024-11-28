@@ -21,8 +21,12 @@ export default function LoadCards() {
     
 
     return (
-        <div>{cards}</div>
-    )
+        <div>
+            {cards.map((card, index) => (
+                <div key={index}>{card}</div>
+            ))}
+        </div>
+    );
 
 
 }

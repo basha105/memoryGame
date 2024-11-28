@@ -4,13 +4,13 @@ import '../styles/cardStyle.css'
 
 const pokemon = ['pikachu', 'squirtle', 'bulbasaur', 'charmander', 'mudkip', 'piplup', 'cyndaquil', 'munchlax', 'chimchar', 'oshawott', 'magikarp', 'meowth'];
 
-async function getPokemon(name) {
-    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
-    const pokemonData = await response.json();
-    return pokemonData.sprites.front_default;
-}
-
 export default function BuildCard(index) {
+
+    async function getPokemon(name) {
+        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
+        const pokemonData = await response.json();
+        return pokemonData.sprites.front_default;
+    }
 
     const [image, setImage] = useState('');
 
@@ -22,13 +22,9 @@ export default function BuildCard(index) {
         getImage();
     }, []);
 
-    
-
     return (
         <div id="card">
             <img src={image} alt="" />
         </div>
     )
-
-
 }
