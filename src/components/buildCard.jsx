@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useState } from 'react';
+import '../styles/cardStyle.css'
 
 const pokemon = ['pikachu', 'squirtle', 'bulbasaur', 'charmander', 'mudkip', 'piplup', 'cyndaquil', 'munchlax', 'chimchar', 'oshawott', 'magikarp', 'meowth'];
 
@@ -9,13 +10,13 @@ async function getPokemon(name) {
     return pokemonData.sprites.front_default;
 }
 
-export default function BuildCard() {
+export default function BuildCard(index) {
 
     const [image, setImage] = useState('');
 
     useEffect(() => {
         async function getImage() {
-            const myUrl = await getPokemon(pokemon[0]);
+            const myUrl = await getPokemon(pokemon[index]);
             setImage(myUrl);
         }
         getImage();
@@ -24,7 +25,7 @@ export default function BuildCard() {
     
 
     return (
-        <div>
+        <div id="card">
             <img src={image} alt="" />
         </div>
     )
