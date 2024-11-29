@@ -4,12 +4,19 @@ import '../styles/boardStyle.css';
 
 export default function Board() {
 
+    
+
+    function shuffler(array) {
+        return array.sort(() => Math.random() - 0.5);
+    }
+
+    let shuffledPokemon = shuffler(pokemon);
+
     return (
         <div id="board">
-            {pokemon.map((poke, index) => (
-                <Card key={index} index={index} />
+            {shuffledPokemon.map((poke, index) => (
+                <Card key={index} index={index}/>
             ))}
-
         </div>
     )
 }
