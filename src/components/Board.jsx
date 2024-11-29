@@ -7,8 +7,9 @@ export default function Board() {
     
     const [rerenderKey, setRerenderKey] = useState(false);
 
-    const handleChildClick = () => {
+    const handleChildClick = (index) => {
         setRerenderKey(!rerenderKey);
+        console.log(`${pokemon[index]} was clicked!`)
     }
 
 
