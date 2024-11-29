@@ -1,21 +1,36 @@
 import Card from './Card.jsx';
 import { pokemon } from '../data/pokemon.js';
 import '../styles/boardStyle.css';
+import { useState } from 'react';
 
 export default function Board() {
+    
+    const [rerenderKey, setRerenderKey] = useState(false);
 
-        
-
-    function shuffler(array) {
-        return array.sort(() => Math.random() - 0.5);
+    const handleChildClick = () => {
+        setRerenderKey(!rerenderKey);
     }
 
-    let shuffledPokemon = shuffler(pokemon);
+
+    function shuffler(array) {
+        let newList = array.sort(() => Math.random() - 0.5);
+        return newList
+    }
+    
+    let shuffledPokemon = shuffler(pokemon)
+    
+
+    
+    
+    
+
+
+
 
     return (
-        <div id="board">
+        <div id="board" key={rerenderKey}>
             {shuffledPokemon.map((poke, index) => (
-                <Card key={index} index={index}/>
+                <Card key={index} index={index} onChildClick={handleChildClick}/>
             ))}
         </div>
     )
