@@ -20,18 +20,10 @@ export default function Board() {
     
     let shuffledPokemon = shuffler(pokemon)
     
-
-    
-    
-    
-
-
-
-
     return (
         <div id="board" key={rerenderKey}>
             {shuffledPokemon.map((poke, index) => (
-                <Card key={index} index={index} onChildClick={handleChildClick}/>
+                <Card key={index} index={index} onChildClick={() => handleChildClick(index)}/>
             ))}
         </div>
     )
