@@ -6,13 +6,10 @@ import { useState } from 'react';
 export default function Board() {
     
     const [rerenderKey, setRerenderKey] = useState(false);
-    const [cardClicked, setCardClicked] = useState(false);
-
 
 
     const handleChildClick = (index) => {
-        setRerenderKey(!rerenderKey);
-        setCardClicked(true); 
+        setRerenderKey(!rerenderKey); 
         console.log(`${pokemon[index]} was clicked!`)
     }
 
